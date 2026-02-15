@@ -1,0 +1,24 @@
+{
+  "functions": {
+    "api/create.js": { "maxDuration": 30 },
+    "api/claim.js": { "maxDuration": 30 },
+    "api/status.js": { "maxDuration": 15 },
+    "api/cover.js": { "maxDuration": 60 },
+    "api/my-packets.js": { "maxDuration": 15 }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/.well-known/(.*)", "destination": "/.well-known/$1" },
+    { "source": "/((?!api/|.well-known/).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
+      ]
+    }
+  ]
+}

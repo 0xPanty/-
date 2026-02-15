@@ -1,0 +1,19 @@
+{
+  "accountAssociation": {
+    "header": "REPLACE_AFTER_DOMAIN_PURCHASE",
+    "payload": "REPLACE_AFTER_DOMAIN_PURCHASE",
+    "signature": "REPLACE_AFTER_DOMAIN_PURCHASE"
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "HongBao",
+    "iconUrl": "https://YOUR_DOMAIN/icon.png",
+    "homeUrl": "https://YOUR_DOMAIN",
+    "splashImageUrl": "https://YOUR_DOMAIN/icon.png",
+    "splashBackgroundColor": "#DC2626",
+    "subtitle": "Red Packets on Farcaster",
+    "description": "Send and claim USDC red packets on Base. Lucky draw or fixed amount, with avatar-based covers.",
+    "primaryCategory": "social",
+    "tags": ["hongbao", "redpacket", "usdc", "base", "farcaster"]
+  }
+}
