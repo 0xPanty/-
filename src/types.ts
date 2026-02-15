@@ -1,10 +1,10 @@
-export type PacketMode = 'lucky' | 'fixed';
+export type PacketMode = 'normal' | 'lucky' | 'exclusive';
 
 export interface RedPacket {
   id: string;
   sender: UserInfo;
   mode: PacketMode;
-  totalAmount: string; // USDC amount in human-readable format
+  totalAmount: string;
   totalCount: number;
   remainingAmount: string;
   remainingCount: number;
@@ -13,6 +13,9 @@ export interface RedPacket {
   expiresAt: number;
   contractTxHash?: string;
   status: 'active' | 'expired' | 'claimed';
+  // exclusive mode only
+  recipientFid?: number;
+  recipientUsername?: string;
 }
 
 export interface Claim {

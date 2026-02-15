@@ -18,9 +18,9 @@ function AppContent() {
   };
 
   return (
-    <div className="relative w-full h-full flex flex-col bg-black text-white">
+    <div className="relative w-full h-full flex flex-col bg-[#f5f5f5] text-gray-900 cny-bg">
       <Header currentPage={page} onNavigate={setPage} />
-      <div className="flex-1 overflow-y-auto no-scrollbar">
+      <div className="flex-1 overflow-y-auto no-scrollbar pb-20">
         {page === 'home' && <HomePage onCreateNew={() => setPage('create')} onOpenPacket={openPacket} />}
         {page === 'create' && <CreatePage onSuccess={openPacket} onBack={() => setPage('home')} />}
         {page === 'packet' && <PacketPage packetId={activePacketId} onBack={() => setPage('home')} />}
@@ -31,11 +31,10 @@ function AppContent() {
 }
 
 export default function App() {
+  // TODO: re-enable LoginGate for production
   return (
     <AuthProvider>
-      <LoginGate>
-        <AppContent />
-      </LoginGate>
+      <AppContent />
     </AuthProvider>
   );
 }
